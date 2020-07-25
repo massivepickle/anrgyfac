@@ -2,6 +2,7 @@ const Engine = Matter.Engine;
 const World= Matter.World;
 const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
+var ep;
 
 var engine, world;
 var box1, pig1,pig3;
@@ -13,7 +14,7 @@ var bg = "sprites/bg1.png";
 var score = 0;
 
 function preload() {
-    getBackgroundImg();
+    backgroundImg = loadImage("sprites/bg1.png");
 }
 
 function setup(){
@@ -47,13 +48,11 @@ function setup(){
 }
 
 function draw(){
-    if(backgroundImg)
-        background(backgroundImg);
-    
-        noStroke();
-        textSize(35)
-        fill("white")
-        text("Score  " + score, width-300, 50)
+    background(backgroundImg);
+    noStroke();
+    textSize(35)
+    fill("white")
+    text("Score  " + score, width-300, 50)
     
     Engine.update(engine);
     //strokeWeight(4);
